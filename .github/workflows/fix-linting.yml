@@ -1,0 +1,30 @@
+name: Fix linting from a comment
+on:
+  issue_comment:
+    types: [created, edited]
+
+jobs:
+  deploy:
+    # Only run if comment is on a PR and if it contains the magic keywords
+    if: >
+      contains(github.event.comment.html_url, '/pull/') &&
+      contains(github.event.comment.body, '@nf-core-bot fix linting')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        if: contains(github.event.comment.body, '@nf-core-bot fix linting') # check the comment if it contains the keywords
+
+      - uses: actions/setup-node@v2
+
+      - name: Install Prettier
+        run: npm install -g prettier @prettier/plugin-php
+
+      - name: Run Prettier --write
+        run: prettier --write ${GITHUB_WORKSPACE}
+
+      - name: Commit & push changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git commit -am "Fix linting with Prettier"
+          git push
