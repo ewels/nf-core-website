@@ -49,6 +49,7 @@ The Safety Team in consultation with the nf-core core team have the right and re
 Members of the core team or the Safety Team who violate the CoC will be required to recuse themselves pending investigation. They will not have access to any reports of the violations and be subject to the same actions as others in violation of the CoC.
 
 ## When are where does this Code of Conduct apply?
+
 Participation in the nf-core community is contingent on following these guidelines in all our workspaces and events such as hackathons, workshops, bytesize, and collaborative workspaces on gather.town. These guidelines include but are not limited to the following listed alphabetically and therefore in no order of preference:
 
 - Communicating with an official project email address.
