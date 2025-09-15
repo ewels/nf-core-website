@@ -158,6 +158,11 @@ You are now ready to try it in the CI. Open a Pull Request. Watch the CI and res
 - In the CI output, you'll likely notice that conda packages basically build and run in their own world of `lib` and `bin` subdirectories containing everything that they need.
   You'll see mad looking directories `"placehold_....."` - which are just it creating an environment to isolate itself in for build, and another for test.
 
+  - Once your recipe is good to go - ie. CI is passing - there'll be a green tick in PR list in github - add this comment to the PR which will encourage a maintainer to merge it:
+   ```
+    @BiocondaBot please add label
+    ```
+
 ### Testing builds locally
 
 You can also build and test packages locally to be a bit quicker.
@@ -209,7 +214,7 @@ To fix a conda-forge package, for example one called `perl-nonsense`:
 
 ### Manual fixes
 
-To fix a recipe, you need to fork the repo and clone it locally:
+To fix a recipe, you need to **fork the repo**, and then clone it locally:
 
 ```bash
 git clone git@github.com:{your-github-username}/perl-nonsense-feedstock.git
